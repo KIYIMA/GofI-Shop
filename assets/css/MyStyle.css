@@ -1,0 +1,868 @@
+body {
+    width: 100%;
+    height: 100%;
+    min-width: 342px;
+    background-color: #d6dce2;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/**/
+
+
+/*Doy estilos al NAVBAR*/
+
+
+/**/
+
+.navbar {
+    background-color: #2C3E50;
+    padding: 20px 5px 20px 5px;
+    position: relative;
+    box-shadow: 0px 3px 10px;
+}
+
+.navbar .container-fuid .navbar-brand {
+    color: aliceblue;
+}
+
+.navDos .btn {
+    color: white;
+    border-color: white;
+}
+
+@media(hover: hover) {
+    .navDos .btn:hover {
+        color: black;
+        background: white;
+        font-weight: bold;
+    }
+}
+.styleModal{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/**/
+
+
+/*Doy estilo a la pagina PRINCIPAL*/
+
+
+/**/
+
+.buscar {
+    width: 60%;
+}
+
+@media screen and (max-width: 900px) {
+    .busqueda {
+        padding-top: 2%;
+        width: 95%;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 900px) {
+    .busqueda {
+        padding-top: 2%;
+        width: 55%;
+        margin: auto;
+    }
+}
+
+
+
+
+.butt:hover {
+    color: white;
+    background: black;
+    border-color: white;
+}
+
+@media screen and (min-width: 1381px) {
+    main .principal {
+        width: 55%;
+        margin: auto;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1380px) {
+    main .principal {
+        width: 65%;
+        margin: auto;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    main .principal {
+        width: 95%;
+        margin: auto;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    main .principal .col1 {
+        width: 50%;
+    }
+
+    main .principal .col2 {
+        width: 50%;
+    }
+
+    main .principal .col3 {
+        width: 50%;
+        margin: auto;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    main .principal {
+        width: 100%;
+    }
+
+    main .principal .col1 {
+        width: 50%;
+    }
+
+    main .principal .col2 {
+        width: 50%;
+    }
+
+    main .principal .col3 {
+        width: 50%;
+        margin: auto;
+        height: auto;
+    }
+}
+
+
+@media screen and (max-width: 460px) {
+    main .principal .col1 {
+        width: 100%;
+        margin: auto;
+    }
+
+    main .principal .col2 {
+        width: 100%;
+        margin: auto;
+        ;
+    }
+
+    main .principal .col3 {
+        width: 100%;
+        margin: auto;
+        height: auto;
+    }
+
+    main .principal {
+        width: 80%;
+        margin: auto;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    main .principal .col1 {
+        width: 100%;
+        margin: auto;
+    }
+
+    main .principal .col2 {
+        width: 100%;
+        margin: auto;
+        ;
+    }
+
+    main .principal .col3 {
+        width: 100%;
+        margin: auto;
+        height: auto;
+    }
+
+    main .principal {
+        width: 95%;
+        margin: auto;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 310px) {
+    main .principal .col1 {
+        width: 100%;
+        margin: auto;
+    }
+
+    main .principal .col2 {
+        width: 100%;
+        margin: auto;
+        ;
+    }
+
+    main .principal .col3 {
+        width: 100%;
+        margin: auto;
+        height: auto;
+    }
+
+    main .principal {
+        width: 98%;
+        margin: auto;
+        height: auto;
+    }
+}
+
+.principal .card-text {
+    padding-top: 2px;
+    color: black;
+}
+
+.card {
+    padding: 10px 5px 5px 5px;
+    margin: 10px;
+    margin-top: 15px;
+    width: 20%;
+    height: auto;
+    border-radius: 2rem;
+    box-shadow: 0px 1px 10px rgb(0, 0, 0, 0.2);
+    transition: all 400ms ease;
+}
+
+@media(hover: hover) {
+    .card:hover {
+        box-shadow: 5px 5px 25px rgb(0, 0, 0, 0.4);
+    }
+}
+
+.title-produc {
+    margin-left: 15%;
+    margin-top: 20px;
+}
+
+.PCs a,
+.PCEscritorio a,
+.Laptops a {
+    padding-left: 0px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(8, 10, 184);
+}
+.Laptops{
+    margin-top: 20%;
+}
+
+
+/**/
+
+
+/*Doy estilos a la pagina PRINCIPAL, en particular al efecto que tiene el caroucel cuando el usuario baja el zoom*/
+
+
+/**/
+
+@media screen and (max-width: 8000px) {
+    .slide {
+        width: 25%;
+        height: auto;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 6000px) {
+    .slide {
+        width: 30%;
+        height: auto;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 5200px) {
+    .slide {
+        width: 37%;
+        height: auto;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 4300px) {
+    .slide {
+        width: 45%;
+        height: auto;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 3700px) {
+    .slide {
+        width: 53%;
+        height: auto;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 3200px) {
+    .slide {
+        width: 61%;
+        height: auto;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 2600px) {
+    .slide {
+        width: 75%;
+        height: auto;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1920px) {
+    .slide {
+        width: 80%;
+        height: auto;
+
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .slide {
+        width: 100%;
+        height: auto;
+
+    }
+}
+
+
+/**/
+
+
+/*Doy estilo a la seccion de "COMERCILIZACIÓN"*/
+
+
+/**/
+
+.comercializacion {
+    text-align: justify;
+    
+    padding: 5% 0% 5% 0%;
+}
+
+.comercializacion .tipo-entrega,
+.forma-pago,
+.info-usuario {
+    background-color: white;
+    padding: 2%;
+    border-radius: 1rem;
+    margin: 2%;
+}
+
+.comercializacion .tipo-entrega h3 {
+    padding: 1% 0% 1% 0%;
+}
+
+.comercializacion .tipo-entrega .row img {
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.comercializacion .forma-pago img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.comercializacion .info-usuario h3 {
+    padding: 1% 0% 1% 0%;
+}
+
+@media screen and (max-width: 360px) {
+    .container {
+        width: 95%;
+    }
+}
+
+
+/**/
+
+
+/*Doy un estilo a la seccion de "CONTACTO"*/
+
+
+/**/
+
+.consulta .form,
+.formDescription {
+    padding: 1%;
+}
+
+.formDescription {
+    height: 15%;
+}
+
+.consulta,
+.Contactanos {
+    margin: 10% 0% 10% 0%;
+    border-radius: 1rem;
+    background-color: white;
+    padding: 3%;
+}
+
+.consulta h3,
+.contactanos h4 {
+    text-align: center;
+    margin-bottom: 3%;
+}
+
+.consulta .boton {
+    color: black;
+    border-color: black;
+    border-radius: 4px;
+}
+
+@media(hover: hover) {
+    .consulta .boton:hover {
+        color: white;
+        background: black;
+        border-color: black;
+    }
+}
+
+@media screen and (min-width: 4002px) {
+    .contacto {
+        width: 20%;
+    }
+}
+
+@media screen and (max-width: 4001px) {
+    .contacto {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 2400px) {
+    .contacto {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1355px) {
+    .contacto {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .contacto {
+        width: 70%;
+        padding-top: 2%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .contacto {
+        width: 70%;
+        padding-top: 2%;
+    }
+}
+
+@media screen and (max-width: 410px) {
+    .contacto {
+        width: 95%;
+        padding-top: 2%;
+    }
+}
+
+@media screen and (max-width: 1356px) {
+    .contactanos .col-4 {
+        width: 50%;
+        height: auto;
+    }
+
+    .contactanos .maps {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .contactanos .col-4 {
+        width: 50%;
+        height: auto;
+    }
+
+    .contactanos .maps {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 645px) {
+    .contactanos .col-4 {
+        width: 100%;
+        height: auto;
+        padding-top: 2%
+    }
+}
+
+
+/**/
+
+
+/* Doy estilos a los TERMINOS Y CONDICIONES*/
+
+
+/**/
+
+.TermUsos {
+    text-align: justify;
+    background-color: #d6dce2;
+    padding: 0px 5% 0px 5%;
+    font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+.TermUsos h2 {
+    text-align: center;
+    padding: 50px 0px 50px 0px;
+}
+
+.divsPrimer {
+    margin-top: 40px;
+}
+
+.divs {
+    margin-top: 40px;
+}
+
+.divsUlti {
+    margin-top: 40px;
+    padding-bottom: 40px;
+}
+
+
+/**/
+
+
+/*Doy estilos a la seccion de "QUEINES SOMOS"*/
+
+
+/**/
+
+.quienesSomos {
+    margin: auto;
+    text-align: justify;
+}
+
+.quienesSomos h2 {
+    text-align: center;
+}
+
+.quienesSomos .descriptionUs,
+.DescripciónServicios {
+    background-color: white;
+    padding: 2%;
+    border-radius: 1rem;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.DescripciónServicios img {
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.DescripciónServicios h5 {
+    margin-top: 3%;
+}
+
+@media screen and (max-width: 800px) {
+    .quienesSomos {
+        width: 95%;
+    }
+}
+
+
+/**/
+
+
+/*Doy estilos a formularios de INICIO DE SESION Y REGISTRARSE*/
+
+
+/**/
+
+.iniRegis {
+    background-color: grey;
+    border-radius: 2rem;
+}
+
+@media(hover: hover) {
+    .BtnIniRegi:hover {
+        color: black;
+        background: white;
+        font-weight: bold;
+        border-color: rgb(0, 0, 0);
+    }
+}
+
+.formulario .TieneCuenta a {
+    color: black;
+}
+
+.formRegistro {
+    background-color: grey;
+    border-radius: 2rem;
+    width: 65%;
+}
+
+
+
+
+/*Doy estilo a cada producto a comprar*/
+
+.cadaProducto,
+.row,
+.col-6 {
+    text-align: justify;
+}
+
+.cadaProducto {
+    margin: 5% auto 5% auto;
+    background-color: rgb(255, 255, 246);
+    border-radius: 1%;
+}
+
+.cadaProducto .row,
+.descripTecnica {
+    padding: 2% 0% 2% 0%;
+}
+
+.imgProducto {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.row .icons,
+.row {
+    margin: 0%;
+    padding: 0%;
+}
+
+.icons,
+.iconP {
+    padding: 0%;
+}
+
+.col-6 .precioC {
+    padding: 0%;
+}
+
+.precioC p {
+    width: 100%;
+    font-size: 190%;
+    padding: 0%;
+    margin: 0%;
+}
+
+.cadaProducto .row .infoCompra .precio {
+    padding: 2% 0% 2% 0%;
+}
+
+.col-6 .Mpagos .row {
+    justify-content: end;
+}
+
+.Mpagos img {
+    padding: 1%;
+    width: 20%;
+    height: auto;
+}
+
+.incluido {
+    padding: 3% 0% 3% 0%;
+}
+
+.incluido p {
+    padding: 0%;
+    margin: 0%;
+}
+
+.incluido img {
+    width: 3%;
+}
+
+.finansiation p {
+    margin: 0%;
+    padding: 0%;
+    font-size: 50%;
+}
+
+.finansiation h5 {
+    margin: 0%;
+}
+
+.finansiation img {
+    height: 40%;
+    width: auto;
+}
+
+.separador {
+    border-top: 1px solid black;
+    height: 2px;
+    max-width: 100%;
+}
+
+.boton .btn {
+    font-weight: bold;
+    margin: 2% auto 2% auto;
+}
+
+.infoCompra .boton {
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .cadaProducto {
+        width: 75%;
+    }
+
+    .imgProduct {
+        width: 100%;
+    }
+
+    .infoCompra {
+        width: 100%;
+        padding: 3%;
+    }
+}
+
+@media screen and (max-width: 491px) {
+    .cadaProducto {
+        width: 95%;
+    }
+
+    .imgProduct {
+        width: 100%;
+    }
+
+    .infoCompra {
+        width: 100%;
+        padding: 3%;
+    }
+}
+
+
+/*Doy etilos a la tabla de especificaciones*/
+
+.tabla {
+    background-color: rgb(218, 215, 199);
+    width: 100%;
+    margin-top: 5%;
+    font-size: 80%;
+}
+
+table .valor  {
+    text-align: end;
+}
+
+.par {
+    background-color: rgb(224, 222, 217);
+}
+
+thead {
+    color: rgb(247, 246, 242);
+    background-color: rgb(119, 119, 119);
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+thead th {
+    font-size: 120%;
+}
+
+th,
+td {
+    padding: 1%;
+}
+
+@media screen and (min-width: 1200px) {
+    .cadaProducto {
+        width: 60%;
+    }
+}
+
+.opcEnvio {
+    color: green;
+    font-weight: bold;
+    font-size: 90%;
+    padding: 3% 0 3% 0;
+}
+
+/*Doy etilos a la sección de "listar.php"*/
+.listaUsuarios h3 {
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+.listaUsuarios {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+/*Doy estilos al cátalogo de computadoras */
+.catalogoProductos {
+    width: auto;
+    max-width: auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: hidden;
+    min-width: 350px;
+}
+
+.CL {
+    width: 35%;
+    
+}
+
+.CL a {
+    text-decoration: none;
+    color: black;
+}
+
+.CL .card-body h4 {
+    text-decoration: none;
+    
+    color: rgb(0, 35, 190);
+}
+
+.CL .card-body{
+    padding-bottom: 15%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+}
+.CL .card-body:hover{
+    display: block;
+}
+.CL .card-body .card-text{
+    font-size: 80%;
+}
+
+/*Estilos para formularios de registro de productos*/
+
+.formProducto{
+    width: 75%;
+}
+
+/*Estilos para la descipción de cada producto*/
+.descripcionProducto{
+    margin: 5% 2% 5% 2%;
+}
