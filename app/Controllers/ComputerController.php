@@ -38,23 +38,65 @@ class ComputerController extends Controller{
         echo view('front/listaProductos',$datos);
         echo view('front/footer_view');
     }
-    public function search(){ 
-        $db = \Config\Database::connect(); 
-        $builder= $db->table('usuarios');
-        $builder->select('s_id,s_name'); 
-        $result = $builder->get();
-        var_dump($result);
+    
+    public function search(){
+        $productName = $this->request->getVar('search');
+        $data['titulo'] = $productName ." - Resultados";
 
-        echo(' HOLA ');
+        $productos= new ProductoModel();
 
-        echo $db->getLastQuery();
-        
+        $datos['resul']=[
+            'resultados' => $productos->select('*')->like('nombre',$productName)->findAll(),
+            'search' => $productName
+        ];
+        echo view('front/head_view',$data);
+        echo view('front/nav_view');
+        echo view('front/result_view',$datos);
+        echo view('front/footer_view');
     }
 
-    
+    public function filterPrecio(){
+
+        $productName = $this->request->getVar('search');
+        $data['titulo'] = $productName ." - Resultados";
+        $productos= new ProductoModel();
+        
+       
+        $datos['resul']=[
+            'resultados' => $productos->orderBy('precioPC','ASC')->findAll(),
+            'search' => $productName
+        ];
+
+        echo view('front/head_view',$data);
+        echo view('front/nav_view');
+        echo view('front/result_view',$datos);
+        echo view('front/footer_view');
+    }
+    public function filterPCs(){
+        $productName = $this->request->getVar('search');
+        $data['titulo'] = $productName ." - Resultados";
+
+        $productos= new ProductoModel();
+        $result['resultados'] = $productos->select('*')->like('nombre',$productName)->findAll();
+        echo view('front/head_view',$data);
+        echo view('front/nav_view');
+        echo view('front/result_view',$result);
+        echo view('front/footer_view');
+    }
+    public function filterLaptops(){
+        $productName = $this->request->getVar('search');
+        $data['titulo'] = $productName ." - Resultados";
+
+        $productos= new ProductoModel();
+        $result['resultados'] = $productos->select('*')->like('nombre',$productName)->findAll();
+        echo view('front/head_view',$data);
+        echo view('front/nav_view');
+        echo view('front/result_view',$result);
+        echo view('front/footer_view');
+    }
     
     public function getEliminarProducto(){
-        $data['titulo'] = "Lista de eliminadas - GofI Shop";
+        $data['titulo'] = "Lista de eliminados - GofI Shop";
 
         $computador= new ProductoModel();
         $datos['productos']= $computador->orderBy('id','ASC')->findAll();
@@ -64,6 +106,7 @@ class ComputerController extends Controller{
         echo view('front/productosEliminados',$datos);
         echo view('front/footer_view');
     }
+
     public function getAltaProducto($id=null){
         if(!(isset($_SESSION['logged']))){
             return $this->response->redirect(site_url('iniciar'));

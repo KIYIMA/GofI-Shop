@@ -60,10 +60,10 @@
             <div class="row boton " >
                 <div class="col-6" style="text-align: center;">
                     <?php if(isset($_SESSION['logged'])){?>
-                        <a href="<?php echo base_url('comprar/'. $array['id'] )?>" class="btn btn-success  ">¡ Comprar !</button></a>
+                        <a href="<?php echo base_url('comprar/'. $array['id'] )?>" class="btn btn-outline-success  ">¡ Comprar !</button></a>
                     <?php 
                         }else{ 
-                        echo('<button class="btn btn-success" onclick="logIn()" >¡ Comprar !</button>');
+                        echo('<button class="btn btn-outline-success" onclick="logIn()" >¡ Comprar !</button>');
                         }
                     ?>
                 </div>
@@ -81,14 +81,14 @@
                             echo form_hidden('stockMinimo', $array['stockMinimo']);
 
                             $btn = array(
-                                'class' => 'btn btn-info fuenteBotones' ,
+                                'class' => 'btn btn-outline-info' ,
                                 'value' => 'Al Carrito',
                                 'name'  => 'action'
                                 );  
                             echo form_submit($btn);
                             echo form_close();
                         }else{
-                            echo('<button class="btn btn-info" onclick="logIn()" >Al Carrito</button>');
+                            echo('<button class="btn btn-outline-info" onclick="logIn()" >Al Carrito</button>');
                         }
                     ?>
                 </div>

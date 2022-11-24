@@ -1,7 +1,7 @@
 <div class="Container listaProductos">
     <h3 class="card-title" style="padding-top:1%;">Carrito de compras - <b>GofI Shop</b></h3>
 
-    <table id="" class="table table-triped" >
+    <table id="example" class="display responsive nowrap" style="width:100%" >
         
         
             <thead>
@@ -22,29 +22,29 @@
                     $i = 1;
                     
 
-                    foreach($cart->contents() as $carrito):?>
+                    foreach($carro as $carrito):?>
 
                     <tr>
                         <td> <?php echo $i++; ?> </td>
-                        <td> <?php echo $carrito['name']; ?> </td>
-                        <td> <?php echo number_format($carrito['price'], 2); ?></td>
-                        <td> <?php echo $carrito['qty']; ?></td>
+                        <td> <?php echo $carrito['nombre']; ?> </td>
+                        <td> <?php echo ($carrito['subtotal'] ); ?></td>
+                        <td> <?php echo $carrito['cantidad']; ?></td>
                         <?php 
                             $gran_total = $gran_total + $carrito['subtotal']; 
                         ?>
                         <td>
-                            <a href="<?=site_url('restarCantidad/'.$carrito['rowid'])?>">
+                            <a href="<?=site_url('restarCantidad/'.$carrito['carrito_id'])?>">
                                 <img src="<?=site_url("assets/img/restarCarrito.png")?>" style="width: 25px;"></img>
                             </a>
                             
-                            <a href="<?=site_url('sumarCantidad/'.$carrito['rowid'])?>">
+                            <a href="<?=site_url('sumarCantidad/'.$carrito['carrito_id'])?>">
                                 <img src="<?=site_url("assets/img/agregarCarrito.png")?>" style="width: 25px;"></img>
                             </a>
                         </td>
                         <td>
-                            <a href="<?=site_url('eliminaProducto/'.$carrito['rowid'])?>">Eliminar</a>
+                            <a href="<?=site_url('eliminaProducto/'.$carrito['carrito_id'])?>">Eliminar</a>
                         </td>
-                        <td>$<?php echo number_format($carrito['subtotal'], 2); ?></td>
+                        <td>$<?php echo ($carrito['subtotal']); ?></td>
                     </tr>
                     
                 
@@ -58,11 +58,13 @@
     
     
     <br>
-    <a href="catalogoProductos"  class="btn btn-info">Agregar productos</a>
-    <?php 
-            if($cart->contents()){
-                echo ('<a href='.'"borrarCarrito"'. 'class=' . '"btn btn-danger"' .'>Eliminar</a>');
-                echo ('<a href='.'"comprar_carrito"' . 'class=' . '"btn btn-success"' .'>Confirmar compra</a>');
-            }
-        ?>
+    <div class="botones">
+        <a href="catalogoProductos"  class="btn btn-info m-1">Agregar productos</a>
+        <?php 
+                if($carro){
+                    echo ('<a href='.'"borrarCarrito"'. 'class=' . '"btn btn-danger m-1"' .'>Eliminar</a>');
+                    echo ('<a href='.'"comprar_carrito"' . 'class=' . '"btn btn-success m-1"' .'>Confirmar compra</a>');
+                }
+            ?>
+    </div>
 </div>

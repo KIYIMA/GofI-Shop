@@ -1,6 +1,6 @@
-<footer class="bg-black text-center text-white ">
-    <div class="container p-4 pb-0">
-        <section class="mb-4">
+<footer class="bg-black footer text-center pt-3 pb-3 text-white ">
+    <div class="container  pb-0">
+        <section class="mb-3">
             <div>
                 <a href="https://www.facebook.com/" style="color: white"><img
                         src="<?php echo base_url('./assets/img/21.png')?>"
@@ -15,7 +15,7 @@
         </section>
     </div>
 
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    <div class="text-center p-1" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2022 Copyright:
         <a class="text-white" href="http://localhost/MyProyect/">www.GofIShop.com.ar</a>
     </div>

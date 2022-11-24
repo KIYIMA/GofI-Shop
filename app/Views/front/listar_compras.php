@@ -14,23 +14,26 @@
         </thead>
         <tbody>
             <?php $costo_total=0;?>
-            <?php if($detalles ):?>
-            <?php foreach($detalles as $detalle):?>
+            
+            <?php foreach($compra as $detalle):?>
             <tr>
-                <td> <?= $detalle['venta_id'] ?> </td>
-                <td><?= $detalle['producto_id'] ?></td>
+                <td> <?= $detalle['compras_id'] ?> </td>
+                <td><?= $detalle['nombre'] ?></td>
                 
-                <td><?= $detalle['cantidad_ventaDetalle'] ?></td>
-                <td><?= $detalle['precio_ventaDetalle'] ?></td>
+                <td><?= $detalle['compra_cantidad'] ?></td>
+                <td><?= $detalle['precioPC'] ?></td>
                 <td>
                 <?php 
-                    $costo_total= $costo_total+$detalle['precio_ventaDetalle'] * $detalle['cantidad_ventaDetalle'];
-                    echo $detalle['precio_ventaDetalle'] * $detalle['cantidad_ventaDetalle']; 
+                $subTotal= $detalle['compra_subtotal'] * $detalle['compra_cantidad'];
+                $costo_total +=  $detalle['compra_subtotal'];
+                echo($subTotal);
+                    //$costo_total= $costo_total+$detalle['precioTotal'] * $detalle['cantidad_ventaDetalle'];
+                    //echo $detalle['precio_ventaDetalle'] * $detalle['cantidad_ventaDetalle']; 
                     ?>
                 </td>
             </tr>
             <?php endforeach; ?>
-            <?php endif; ?>
+            
             
         </tbody>
     </table>

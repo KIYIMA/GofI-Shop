@@ -43,7 +43,7 @@ $routes->get('terminosUsos', 'Home::getTerminosUsos');
 
 $routes->get('catalogoProductos', 'carrito_controller::ProductosParaUsuarios');
 $routes->get('carrito', 'carrito_controller::carroCompra');
-$routes->post('carrito_agrega', 'carrito_controller::add');
+$routes->post('carrito_agrega/(:num)', 'carrito_controller::add/$1');
 
 
 $routes->get('comprar/(:num)', 'carrito_controller::comprarProductoDirecto/$1');
@@ -54,11 +54,16 @@ $routes->get('borrarCarrito', 'carrito_controller::destroy');
 $routes->get('eliminaProducto/(:hash)', 'carrito_controller::borrarProducto/$1');
 $routes->get('comprar_carrito', 'Carrito_Controller::comprar_carrito');
 
-$routes->get('restarCantidad/(:hash)', 'Carrito_Controller::restarCantidad/$1');
-$routes->get('sumarCantidad/(:hash)', 'Carrito_Controller::sumarCantidad/$1');
+$routes->get('restarCantidad/(:num)', 'Carrito_Controller::restarCantidad/$1');
+$routes->get('sumarCantidad/(:num)', 'Carrito_Controller::sumarCantidad/$1');
 $routes->get('listar_compras', 'Ventas_Controllers::listar_compras');
 
 $routes->post('search', 'ComputerController::search');
+
+$routes->get('menorPrecio', 'ComputerController::filterPrecio');
+$routes->get('PCs', 'ComputerController::filterPCs');
+$routes->get('Laptops', 'ComputerController::filterLaptops');
+
 $routes->post('formAñadirConsulta', 'UsuariosController::consultaUsuario');
 
 $routes->get('cadaProducto/(:num)', 'ComputerController::getCadaProducto/$1');

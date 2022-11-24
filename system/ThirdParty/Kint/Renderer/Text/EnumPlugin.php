@@ -23,31 +23,22 @@
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-namespace Kint\Zval;
+namespace Kint\Renderer\Text;
 
-use DateTime;
+use Kint\Zval\Value;
 
-class DateTimeValue extends InstanceValue
+class EnumPlugin extends Plugin
 {
-    public $dt;
-
-    public $hints = ['object', 'datetime'];
-
-    public function __construct(DateTime $dt)
+    public function render(Value $o)
     {
-        parent::__construct();
+        $out = '';
 
-        $this->dt = clone $dt;
-    }
-
-    public function getValueShort()
-    {
-        $stamp = $this->dt->format('Y-m-d H:i:s');
-        if ((int) ($micro = $this->dt->format('u'))) {
-            $stamp .= '.'.$micro;
+        if (0 == $o->depth) {
+            $out .= $this->renderer->colorTitle($this->renderer->renderTitle($o)).PHP_EOL;
         }
-        $stamp .= $this->dt->format('P T');
 
-        return $stamp;
+        $out .= $this->renderer->renderHeader($o).PHP_EOL;
+
+        return $out;
     }
 }

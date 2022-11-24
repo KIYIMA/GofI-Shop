@@ -29,8 +29,8 @@
             <?php }?>
 
             <div class="col-12" style="text-align: center;">
-                <button type="submit" onclick="envConsult()" class="btn btn-success">Enviar</button>
-                <input type="reset" value="Cancelar" class="btn btn-danger">
+                <button type="submit" onclick="envConsult()" class="btn btn-outline-dark">Enviar</button>
+                <input type="reset" value="Cancelar" class="btn btn-outline-danger">
             </div>
         </form>
     </div>
@@ -50,7 +50,7 @@
         <div class="col-4 maps">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3540.035491082722!2d-58.83392838416711!3d-27.468154423215204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94456ca0e1c4b807%3A0xde093295071d103c!2sJunin%201500%2C%20W3400AWG%20Corrientes!5e0!3m2!1ses!2sar!4v1650637528560!5m2!1ses!2sar"
-                width="100%" height="100%" style="border-radius: 5px; min-width: 50%;" allowfullscreen="" loading="lazy"
+                width="100%" height="100%" style="" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>

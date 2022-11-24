@@ -5,8 +5,8 @@
 
 <body>
 
-    <form method="get" action="<?=site_url('buscar')?>" class="d-flex busqueda" role="search">
-        <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+    <form method="post" action="<?php echo(base_url('search')); ?>" class="d-flex busqueda"  role="search">
+        <input class="form-control me-2" name="search" type="search" placeholder="Buscar" aria-label="Buscar" required>
         <button class="btn btn-outline-dark" type="submit">Buscar</button>
     </form>
 
@@ -27,7 +27,7 @@
                     <img src="./assets/img/ImgCaroucel2.png" class=" img-fluid" alt="fondoWeb">
                 </div>
                 <div class="carousel-item">
-                    <img src="./assets/img/Carro3.png" class="img-fluid" alt="FondoD">
+                    <img src="./assets/img/Caroucel3.png" class="img-fluid" alt="FondoD">
                 </div>
                 <div class="carousel-item">
                     <img src="./assets/img/Caroucel3.png" class=" img-fluid" alt="fondoE">
@@ -54,23 +54,26 @@
                     <div class="col-12">
                         <h5 style="margin-bottom: 10px; margin-top: 15px;">Ofertas</h5>
                     </div>
-                    <?php foreach($productos as $e):?>
-                        <?php if($e['enOferta'] == 1 && $e['eliminado'] != 1):?>
-                            <div class="col-4 col1">
-                                <div class="card CL h-auto" style="min-width: 100%;">
+                    
+                        <?php foreach($productos as $e):?>
+                            <?php if($e['enOferta'] == 1 && $e['eliminado'] != 1):?>
+                                <div class="col-6 col-md-4 ">
+                                <div class="card CL " style="min-width: 100%;">
                                     <a href="<?php echo base_url('cadaProducto/'.$e['id'])?>">
                                         <img src="<?php echo base_url()?>/assets/uploads/imgProductos/<?= $e['imagenPC'] ?>" class="card-img-top" alt="...">
                                         <div class="card-body">
-                                            <h5 class="card-title">$ <?php echo($e['precioPC'])?></h5>
-                                            <p class="card-text"><?php echo($e['descripciónGeneral'])?></p>
+                                            <h5 class="card-title fontPrice" style="color:blue;">$ <?php echo($e['precioPC'])?></h5>
+                                            <p class="card-text fontDescription"><?php echo($e['descripciónGeneral'])?></p>
                                         </div>
                                     </a>
                                 </div>
-                            </div>
+                                </div>
                             <?php endif;?>
                         <?php endforeach;?>
+                    </div>
+                    
 
-                </div>
+                
             </div>
 
 
@@ -83,20 +86,19 @@
                     
                     <?php
                     $cont = 0;
-                    foreach($productos as $e):
-                    
-                    ?>
+                    foreach($productos as $e):?>
                     
                         <?php 
                             if($e['tipoDispositivo'] == 1 && $cont <= 2):
                         ?>
-                            <div class="col-4 col1 ">
-                                <div class="card CL h-100" style="min-width: 100%;">
+
+                            <div class="col-6 col-md-4 ">
+                                <div class="card CL " style="min-width: 100%;">
                                     <a href="<?php echo base_url('cadaProducto/'.$e['id'])?>">
                                         <img src="<?php echo base_url()?>/assets/uploads/imgProductos/<?= $e['imagenPC'] ?>" class="card-img-top" alt="...">
                                         <div class="card-body">
-                                            <h5 class="card-title">$ <?php echo($e['precioPC'])?></h5>
-                                            <p class="card-text"><?php echo($e['descripciónGeneral'])?></p>
+                                            <h5 class="card-title fontPrice" style="color:blue;">$ <?php echo($e['precioPC'])?></h5>
+                                            <p class="card-text fontDescription"><?php echo($e['descripciónGeneral'])?></p>
                                         </div>
                                     </a>
                                 </div>
@@ -123,16 +125,14 @@
                         $cont = 0;
                         foreach($productos as $e):
                     ?>
-                        <?php 
-                            if($e['tipoDispositivo'] == 2 && $cont <= 2):
-                        ?>
-                            <div class="col-4 col1">
-                                <div class="card CL h-100" style="min-width: 100%;">
+                        <?php if($e['tipoDispositivo'] == 2 && $cont <= 2):?>
+                            <div class="col-6 col-md-4">
+                                <div class="card CL " style="min-width: 100%;">
                                     <a href="<?php echo base_url('cadaProducto/'.$e['id'])?>">
                                         <img src="<?php echo base_url()?>/assets/uploads/imgProductos/<?= $e['imagenPC'] ?>" class="card-img-top" alt="...">
                                         <div class="card-body">
-                                            <h5 class="card-title">$ <?php echo($e['precioPC'])?></h5>
-                                            <p class="card-text"  ><?php echo($e['descripciónGeneral'])?></p>
+                                            <h5 class="card-title fontPrice" style="color:blue;">$ <?php echo($e['precioPC'])?></h5>
+                                            <p class="card-text fontDescription"  ><?php echo($e['descripciónGeneral'])?></p>
                                         </div>
                                     </a>
                                 </div>

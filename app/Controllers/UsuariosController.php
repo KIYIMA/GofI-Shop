@@ -3,7 +3,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\Usuario;
-use App\Models\consultaModel;
+use App\Models\ConsultaModel;
 use App\Filters\Auth;
 
 
@@ -11,12 +11,10 @@ use App\Filters\Auth;
 
 class UsuariosController extends Controller{
     
-    public function __construct(){
-        
-        
+    public function __construct(){ 
         helper('form');
         $this->session = \Config\Services::session(); 
-        
+
     }
     public function vistaUsuarios($puser=null){
         $data['titulo'] = "Home - GofI Shop";
@@ -48,7 +46,19 @@ class UsuariosController extends Controller{
                         'consulta'          => $this->request->getVar('consulta'),
                         'fecha_consulta'    =>  date('Y-m-d H:i:s')
                     ]);  
-                    //error en ruta
+
+                    //Enviar correo
+
+                    $header ="From: ". $this->request->getVar('email') . "\r\n";
+                    $header.= "Reply-To: noreply@example.com"."\r\n";
+                    $header.= "X-Mailer: PHP/". phpversion();
+
+                    $receptor="emanuellezcano999@gmail.com";
+                    $asunto = "GOFI SHOP CONSULTAS";
+                    $cuerpo = $this->request->getVar('consulta');
+
+                    @mail($receptor, $asunto, $cuerpo,$header);
+
                     return redirect()->back()->with('success',[
                         'body' => 'Consulta enviada !!!'
                     ]);
@@ -71,8 +81,8 @@ class UsuariosController extends Controller{
     public function listarConsultas(){
         $data['titulo'] = "Consultas - GofI Shop";
         
-        $consulta= new consultaModel();
-        $datos['consultas']= $consulta->orderBy('id_consulta','ASC')->findAll();
+        $consulta= new ConsultaModel();
+        $datos['consultas']= $consulta->select("*")->findAll();
 
             echo view('front/head_view',$data);
             echo view('front/nav_view');
@@ -234,6 +244,7 @@ class UsuariosController extends Controller{
     }
     
     public function getActualizarUsuario(){
+
         $usuario= new Usuario();
         
         $input = $this->validate([
@@ -252,9 +263,10 @@ class UsuariosController extends Controller{
             $id= $this->request->getVar('id');
             $usuario->update($id,$datos);
             
-            return $this->redirect()->back()->wiht('usuarioActualizado',[
-                    'body' => 'Actualización !!!'
-                ]);
+            return redirect()->back()->with('success',[
+                'body' => 'Actualizado !!!'
+            ]);
+            
             
         }else{
             return $this->response->redirect(site_url('listar'));
@@ -291,7 +303,7 @@ class UsuariosController extends Controller{
                     'passwordUsu'     => password_hash($this->request->getVar('pass'), PASSWORD_DEFAULT)
                 ]);  
 
-                return $this->response->redirect(site_url('iniciar'));
+                return $this->response->redirect(site_url('home'));
             }  
         }else{    
             return redirect()->back()->with('noPuedeRegistrar',[
